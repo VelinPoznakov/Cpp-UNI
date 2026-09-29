@@ -1,0 +1,62 @@
+# ==========================================
+#  C++ / CMake / CLion .gitignore
+# ==========================================
+
+# ----- CLion / JetBrains -----
+.idea/
+*.iml
+out/
+
+# ----- CMake build folders -----
+# CLion creates cmake-build-debug/, cmake-build-release/, etc.
+cmake-build-*/
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeUserPresets.json
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
+compile_commands.json
+_deps/
+
+# ----- Ninja (CLion's default generator) -----
+build.ninja
+.ninja_deps
+.ninja_log
+
+# ----- Compiled output -----
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+*.dll.a
+*.so
+*.dylib
+*.a
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.gch
+*.pch
+*.d
+
+# ----- Visual Studio (if you open the project there) -----
+.vs/
+*.user
+*.suo
+x64/
+[Dd]ebug/
+[Rr]elease/
+
+# ----- VS Code -----
+.vscode/
+
+# ----- OS junk -----
+Thumbs.db
+desktop.ini
+.DS_Store
