@@ -2,7 +2,7 @@
 // Created by Velin Poznakov on 9/29/2026.
 //
 
-#include "../Time.h"
+#include "Time.h"
 #include <iostream>
 
 Time::Time(int seconds, int minutes, int hours) {

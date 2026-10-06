@@ -5,13 +5,13 @@
 #include "Employee.h"
 #include <string>
 
-Employee::Employee(std::string name, int age, std::string currentPosition, double salaries[]) {
+Employee::Employee(std::string name, int age, std::string currentPosition, double* salaries, int count) {
     setName(name);
     setAge(age);
     setCurrentPosition(currentPosition);
 
-    for (int i = 0; i < sizeof(salaries) / sizeof(salaries[0]); i++)
-        setSalaries(salaries[i]);
+    for (int i = 0; i < count; i++)
+        setSalary(salaries[i]);
 }
 
 void Employee::setAge(int age) {
@@ -35,29 +35,29 @@ void Employee::setYearsOfExperience(int yearsOfExperience) {
 }
 
 void Employee::setSalary(double salary) {
-    int length = std::size(this->salaries);
-
-    this->salaries[length] = salary;
+    if (salaryCount < MAX_SALARIES)
+        this->salaries[salaryCount++] = salary;
 }
 
 int Employee::getAverageSalary() {
     double sum = 0;
 
-    int length = std::size(this->salaries);
+    if (salaryCount == 0)
+        return 0;
 
-    for (double salary: this->salaries) {
-        sum += salary;
+    for (int i = 0; i < salaryCount; i++) {
+        sum += this->salaries[i];
     }
 
-    return sum / length;
+    return sum / salaryCount;
 }
 
 int Employee::getMinimalSalary() {
     double min = this->salaries[0];
 
-    for (double salary: this->salaries) {
-        if (salary < min) {
-            min = salary;
+    for (int i = 1; i < salaryCount; i++) {
+        if (this->salaries[i] < min) {
+            min = this->salaries[i];
         }
     }
 
@@ -67,8 +67,8 @@ int Employee::getMinimalSalary() {
 std::string Employee::getSalaries() {
     std::string salariesString = "";
 
-    for (double salary: this->salaries) {
-        salariesString += std::to_string(salary) + " ";
+    for (int i = 0; i < salaryCount; i++) {
+        salariesString += std::to_string(this->salaries[i]) + " ";
     }
 
     return salariesString;

@@ -17,7 +17,8 @@ int main()
         "Velin",
         20,
         "Software Engineer",
-        new double[3]{1000, 2000, 3000}
+        new double[3]{1000, 2000, 3000},
+        3
     );
 
     employee->setYearsOfExperience(5);

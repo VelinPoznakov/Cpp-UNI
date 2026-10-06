@@ -16,10 +16,11 @@ class Employee {
     int age;
     int yearsOfExperience = 0;
     std::string currentPosition;
-    double salaries[MAX_SALARIES];
+    double salaries[MAX_SALARIES] = {};
+    int salaryCount = 0;
 
 public:
-    Employee(std::string name, int age, std::string currentPosition, double salaries[]);
+    Employee(std::string name, int age, std::string currentPosition, double salaries[], int count);
 
     void setSocialNumber(int socialNumber);
     void setName(std::string name);
