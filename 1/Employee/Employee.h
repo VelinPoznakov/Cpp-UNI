@@ -6,16 +6,17 @@
 #define INC_1_EMPLOYEE_H
 
 #include <string>
+using namespace std;
 
 
 class Employee {
     static constexpr int MAX_SALARIES = 12;
 
     int socialNumber = 0;
-    std::string name;
+    string name;
     int age;
     int yearsOfExperience = 0;
-    std::string currentPosition;
+    string currentPosition;
     double salaries[MAX_SALARIES] = {};
     int salaryCount = 0;
 
@@ -38,8 +39,8 @@ public:
 
     void setSalary(double salary);
 
-    int getAverageSalary();
-    int getMinimalSalary();
+    double getAverageSalary();
+    double getMinimalSalary();
 
 
 };

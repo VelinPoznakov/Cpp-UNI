@@ -6,12 +6,14 @@
 #include "Employee/Employee.h"
 #include "Line/Line.h"
 
+using namespace std;
+
 int main()
 {
-    Time *time = new Time(20, 20, 20);
-    std::cout << time->getTime() << std::endl;
+    // Time *time = new Time(20, 20, 20);
+    // std::cout << time->getTime() << std::endl;
+    // delete time;
 
-    delete time;
 
     Employee *employee = new Employee(
         "Velin",
@@ -31,8 +33,11 @@ int main()
 
     employee->setSalary(4000.50);
 
-    employee->getAverageSalary();
-    employee->getMinimalSalary();
+    double avg = employee->getAverageSalary();
+    double min = employee->getMinimalSalary();
+
+    std::cout << "Average salary: " << avg << std::endl;
+    std::cout << "Minimal salary: " << min << std::endl;
 
     delete employee;
 

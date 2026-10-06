@@ -39,7 +39,7 @@ void Employee::setSalary(double salary) {
         this->salaries[salaryCount++] = salary;
 }
 
-int Employee::getAverageSalary() {
+double Employee::getAverageSalary() {
     double sum = 0;
 
     if (salaryCount == 0)
@@ -52,7 +52,7 @@ int Employee::getAverageSalary() {
     return sum / salaryCount;
 }
 
-int Employee::getMinimalSalary() {
+double Employee::getMinimalSalary() {
     double min = this->salaries[0];
 
     for (int i = 1; i < salaryCount; i++) {
