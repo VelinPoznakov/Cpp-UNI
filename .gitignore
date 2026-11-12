@@ -60,3 +60,7 @@ x64/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# ----- Course Project DB -----
+db.conf
+
